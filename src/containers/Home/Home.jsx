@@ -2,7 +2,8 @@ import React, { useState, useEffect, Fragment } from 'react';
 import {AppBar, Button, Toolbar, Typography, TextField} from '@material-ui/core';
 
 const Home = () => {
-  const [ number, setNumber ] = useState('');
+  const [ number, setNumber ]   = useState('');
+  const [ disable, setDisable ] = useState(true)
 
   const handleSend = () => {
     window.open(`https://api.whatsapp.com/send?phone=${number}`);
@@ -14,6 +15,7 @@ const Home = () => {
 
   useEffect(() => {
     console.log('number:', number);
+    (number !== '') ? setDisable(false) : setDisable(true);
   }, [number]);
 
   return (
@@ -48,7 +50,8 @@ const Home = () => {
         <Button
           variant="contained"
           color="primary"
-          onClick={handleSend}>
+          onClick={handleSend}
+          disabled={disable} >
           Kirim Pesan
         </Button>
       </form>
