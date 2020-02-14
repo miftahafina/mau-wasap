@@ -17,7 +17,7 @@ const Home = () => {
 
   return (
     <div>
-      <h1>WA Saja</h1>
+      <h1>Mau WA</h1>
       <form>
       <input 
         type="text"
