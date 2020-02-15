@@ -28,7 +28,6 @@ const Home = () => {
           variant="outlined"
           pattern="[0-9]"
           inputMode="tel"
-          autoFocus
           onChange={handleNumberChange} placeholder="62"/>
           
         <button
