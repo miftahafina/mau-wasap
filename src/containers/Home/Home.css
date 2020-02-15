@@ -36,6 +36,7 @@ body {
   border-radius: 8px;
   margin-bottom: 16px;
   text-align: center;
+  font-size: 24px;
 }
 
 .container > form > button {
@@ -47,6 +48,7 @@ body {
   background-color: var(--primary-light);
   border: 1px solid var(--primary-light );
   color: var(--active-text);
+  font-size: 20px;
 }
 
 .container > form > button:disabled {

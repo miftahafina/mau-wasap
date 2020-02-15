@@ -47,6 +47,27 @@ export function register(config) {
           );
         });
       } else {
+        // Check update
+        ServiceWorkerRegistration.onupdatefound = () => {
+          // Check if online
+          if (navigator.onLine) {
+            // Delete cache
+            caches.keys()
+              .then(function(names) {
+                for (let name of names)
+                    caches.delete(name);
+              })
+
+              .then(() => {
+                window.location.reload(true);
+              })
+
+              .then(() => {
+                registerValidSW(swUrl, config);
+              });
+          }
+        }
+        
         // Is not localhost. Just register service worker
         registerValidSW(swUrl, config);
       }
