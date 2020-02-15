@@ -31,6 +31,7 @@ const Home = () => {
           onChange={handleNumberChange} placeholder="62"/>
           
         <button
+          type="button"
           disabled={disable}
           onClick={handleSend}>
           Kirim Pesan
