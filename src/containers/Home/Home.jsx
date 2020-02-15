@@ -1,5 +1,6 @@
-import React, { useState, useEffect, Fragment } from 'react';
+import React, { useState, useEffect } from 'react';
 import 'normalize.css';
+import './Home.css';
 
 const Home = () => {
   const [ number, setNumber ]   = useState('');
@@ -19,23 +20,24 @@ const Home = () => {
   }, [number]);
 
   return (
-    <Fragment>
-      <form className="form" noValidate autoComplete="off">
+    <div className="container">
+      <form noValidate autoComplete="off">
         <input
+          name="number"
           label="Nomor WhatsApp"
           variant="outlined"
           pattern="[0-9]"
           inputMode="tel"
-          name="number"
+          autoFocus
           onChange={handleNumberChange} placeholder="62"/>
           
         <button
-          onClick={handleSend}
-          disabled={disable}>
+          disabled={disable}
+          onClick={handleSend}>
           Kirim Pesan
         </button>
       </form>
-    </Fragment>
+    </div>
   );
 }
 

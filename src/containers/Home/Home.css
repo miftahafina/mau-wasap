@@ -1,11 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 
 :root {
-  --primary: #2e7d32;
-  --primary-dark: #005005;
-  --primary-light: #60ad5e;
-  --text-light: ;
-  --text-dark: ;
+  --primary: #353e49;
+  --primary-dark: #272f38;
+  --primary-light: #48515c;
+  --active-text: #fff;
+  --inactive-text: #ffffff69;
 }
 
 html {
@@ -16,58 +16,48 @@ html {
 
 body {
   font-family: 'Roboto', sans-serif;
-}
-
-.container {
-  width: 100%;
-  height: 100%;
-  /* background-color: aqua; */
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-}
-
-.form {
-  height: 100% !important;
-  width: 100%;
-  background-color: aquamarine;
-  margin: 100px;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-}
-
-
-
-form > input {
-  width: 100%;
-  font-size: 16px;
-  background-color: aquamarine;
-  border: none;
-  border-bottom: 1px solid #333;
-  outline: none;
-  margin-bottom: 20px;
-}
-
-form > button {
-  width: 100%;
-  font-size: 16px;
   background-color: var(--primary);
-  color: white;
+}
+
+.container > form {
+  margin: 24px;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.container > form > input {
+  width: 100%;
+  height: 32px;
+  outline: none;
   border: none;
   border-radius: 8px;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.container > form > button {
+  width: 100%;
+  height: 40px;
   outline: none;
-  padding: 8px 8px 8px 8px;
+  border: none;
+  border-radius: 8px;
+  background-color: var(--primary-light);
+  border: 1px solid var(--primary-light );
+  color: var(--active-text);
 }
 
-form > button:hover {
-  cursor: pointer;
+.container > form > button:disabled {
+  background-color: var(--primary);
+  border: 1px solid var(--primary-light );
+  color: var(--inactive-text);
 }
 
-form > button:active {
+.container > form > button:active {
   background-color: var(--primary-dark);
+  border: 1px solid var(--primary-dark);
+  color: var(--active-text);
+
 }
